@@ -1,5 +1,5 @@
 print('Hello, world!')
-print('Hey Jude', 'don\t make it bad')
+print('Hey Jude', "don't make it bad"")
 
 
 input()
