@@ -17,3 +17,5 @@ print (450.1 / 60)
 print (7+(.50166*.60))
 
 print('Increase: %d %%' %7)
+
+input()
