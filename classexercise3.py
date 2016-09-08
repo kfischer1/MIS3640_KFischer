@@ -1,17 +1,21 @@
 import time
 print(time.time())
 
-minutes = (time.time()/ 60)
-print(minutes)
+#number of minutes
+minutes = (time.time()// 60)
+print('Minutes:', minutes)
 
-hours = (minutes / 60)
-print(hours)
+#number of hours
+hours = (minutes // 60)
+print('Hours:', hours)
 
-days = (hours / 24)
-print(days)
+#number of days
+days = (hours // 24)
+print('Days:', days)
 
-years = (days / 365)
-print(years)
+#number of years
+years = (days // 365)
+print('Years: ', years)
 
 
 
