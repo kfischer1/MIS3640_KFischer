@@ -50,6 +50,8 @@ def a_new_function_demo():
         print(ord(x))
 
         
+def quadratic(a, b, c):
+    
 
 
 
