@@ -48,13 +48,5 @@ def a_new_function_demo():
     for x in 'Chris':
         print(x)
         print(ord(x))
-
         
-def quadratic(a, b, c):
-    
-
-
-
-input()
-
 
