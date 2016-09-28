@@ -27,13 +27,12 @@ years (for example, 2000).
 """
 def leap_year(year):
     if (year % 4) == 0 and (year % 100) == 0:
-       if (year % 400) == 0:
-        print(year, 'is a leap year')
+    if (year % 400) == 0:
+        print('True')
     elif (year %100) == 0:
-        print(year, 'is not a leap year')
+        print('False')
 
-    pass
-
+ 
 # # Returns True if year is a leap_year, False if year is not a leap_year. 
 # #pass
 # # When you've completed your function, uncomment the
