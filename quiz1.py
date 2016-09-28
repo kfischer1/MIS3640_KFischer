@@ -25,23 +25,23 @@ example 1996. However, years that are divisible by 100 (for example,
 1900) are not leap years, but years that are divisible by 400 are leap
 years (for example, 2000).
 """
-# def leap_year(year):
-#     if (year % 4) == 0 and (year % 100) == 0:
-#        if (year % 400) == 0:
-#         print(year, 'is a leap year')
-#     elif (year %100) == 0:
-#         print(year, 'is not a leap year')
+def leap_year(year):
+    if (year % 4) == 0 and (year % 100) == 0:
+       if (year % 400) == 0:
+        print(year, 'is a leap year')
+    elif (year %100) == 0:
+        print(year, 'is not a leap year')
 
-#     pass
+    pass
 
 # # Returns True if year is a leap_year, False if year is not a leap_year. 
 # #pass
 # # When you've completed your function, uncomment the
 # # following lines and run this file to test!
-# print(leap_year(1900))
-# print(leap_year(2016))
-# print(leap_year(2017))
-# print(leap_year(2000))
+print(leap_year(1900))
+print(leap_year(2016))
+print(leap_year(2017))
+print(leap_year(2000))
 
 # -----------------------------------------------------------------------
 # Question 3:
