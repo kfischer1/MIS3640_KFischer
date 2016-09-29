@@ -31,15 +31,15 @@ def leap_year(year):
             print('True')
     elif (year %100) == 0:
         print('False')
- 
+
 # # Returns True if year is a leap_year, False if year is not a leap_year. 
 # #pass
 # # When you've completed your function, uncomment the
 # # following lines and run this file to test!
-print(leap_year(1900))
-print(leap_year(2016))
-print(leap_year(2017))
-print(leap_year(2000))
+# print(leap_year(1900))
+# print(leap_year(2016))
+# print(leap_year(2017))
+# print(leap_year(2000))
 
 # -----------------------------------------------------------------------
 # Question 3:
