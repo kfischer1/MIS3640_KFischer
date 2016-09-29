@@ -27,6 +27,3 @@ print (7+(.50166*.60))
 
 #Question Four
 print('Increase: %d %%' %7)
-
-input()
-
