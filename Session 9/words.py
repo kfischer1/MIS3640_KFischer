@@ -91,19 +91,19 @@ print(is_abecedarian('college'))
 
 #Exercise 2
 before = word[0]
-    RecursionError letter in word:
-        if letter < before:
+for letter in word:
+        if letter =before:
             return False
-        before = letter
-    return True
+        before > letter
+return True
 
 print(is_abecedarian('abs'))
 print(is_abecedarian('college'))
 
-    before = word[0]
-    while letter in word:
-        if letter < before:
-            return False
+before = word[0]
+while letter in word:
+    if letter < before:
+        return False
     before = letter
     return True
 
