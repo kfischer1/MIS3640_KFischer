@@ -57,12 +57,9 @@ def chop(t):
     >>> t
     [2, 3]
     """
-    list = t 
-    chopList = []
-    for i in range(len(list[:-1])):
-        chopList=list[1:3]
-    return chopList
-
+    del t[0]
+    del t[-1]
+    return 'None'
 
 
 def is_sorted(t):
@@ -75,7 +72,10 @@ def is_sorted(t):
     >>> is_sorted(['b', 'a'])
     False
     """
-
+    if list.sort(t):
+        return True
+    else:
+        return False
 
 def is_anagram(word1, word2):
     """Checks whether two words are anagrams
@@ -83,7 +83,19 @@ def is_anagram(word1, word2):
     word2: string or list
     returns: boolean
     """
-
+    string1 = word1
+    string2 = word2
+    word1 = []
+    word2 = []
+    #validate if the same letters are used in string1 and string2
+    if(len(word1) == len(word2)):
+        for letter in word1:
+            if letter in word2:
+                word2.remove(letter)
+    if len(word2) == 0:
+        return True
+    else:
+        return False
 
 def has_duplicates(s):
     """Returns True if any element appears more than once in a sequence.
