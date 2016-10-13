@@ -68,9 +68,9 @@ def isWordGuessed(secretWord, lettersGuessed):
 # When you've completed your function isWordGuessed, uncomment these three lines
 # and run this file to test!
 
-# secretWord = 'apple'
-# lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's']
-# print(isWordGuessed(secretWord, lettersGuessed))
+secretWord = 'apple'
+lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's']
+print(isWordGuessed(secretWord, lettersGuessed))
 
 # Expected output:
 # False
@@ -94,9 +94,9 @@ def getGuessedWord(secretWord, lettersGuessed):
 # When you've completed your function getGuessedWord, uncomment these three lines
 # and run this file to test!
 
-# secretWord = 'apple'
-# lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's']
-# print(getGuessedWord(secretWord, lettersGuessed))
+secretWord = 'apple'
+lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's']
+print(getGuessedWord(secretWord, lettersGuessed))
 
 # Expected output:
 # '_ pp_ e'
@@ -118,8 +118,8 @@ def getAvailableLetters(lettersGuessed):
 # When you've completed your function getAvailableLetters, uncomment these two lines
 # and run this file to test!
 
-# lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's']
-# print(getAvailableLetters(lettersGuessed))
+lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's']
+print(getAvailableLetters(lettersGuessed))
 
 # Expected output:
 # abcdfghjlmnoqtuvwxyz
