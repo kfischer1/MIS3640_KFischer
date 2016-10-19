@@ -1,67 +1,72 @@
+#GAME OF NIM 
 from random import randrange
-from random import randint
-from math import log
 
-# Define constant variables.
-HUMAN = 0
-COMPUTER = 1
-SMART = 0
-DUMB = 1
-
-twos = [3,7,15,31,63] 
-# Create the initial pile, determine the starting player and computer's strategy.
+"""
+I pre-calculated a list of powers of 2 - 1 instead of calculating each time
+"""
+power_of_two = [3,7,15,31,63]
 
 def nim():
-    pile = randint(10, 100)
-    turn = randrange(0, 2)
-    strategy = randint(0, 1)
-    hum_take= 0
-    comp_take= 1
     """
-    return True if the winner is human, False if winner is computer.
+    Plays the game of Nim with the user - the pile size, AI intelligence and starting user are randomly determined
+    Returns True if the user wins, and False if the computer wins
     """
-    #creating a loop that only breaks when the pile is two and the game is decided
-    while pile > 1: 
-        #all of the computer's decisions will be here, when it is the computer's turn
-        if turn == 0: 
-            print('Computer\'s Turn')
-            #the computer will only take a random amount if it is dumb or if the pile size is a power of 2 minus 1
-            if strategy == 1 or pile in twos:
-                comp_take = randrange(1, pile // 2 + 1)
-            #if the computer is smart and making the pile a power of 2 minus 1 is a legal move, it will do so
-            else: 
-                for power in twos:
-                    #checks which power of 2 minus 1 can be created with a legal move
-                    if (pile // 2 >= pile - power) and (pile - power > 0):
-                        #the computer will take however many marbles it takes to make the pile the power of 2 minus one
-                        comp_take = pile - power
-                        break
-            pile -= comp_take
-            print("The computer took %d marbles, leaving %d.\n" % (turn, pile))
-            #once the computer's turn is done, it changes the turn variable
-            turn = 1
-        #player's turn
+    #generates the pile size 
+    pile_size = randrange(10,101)
+    #decides who gets to go first: 0 is computer, 1 is human
+    start = randrange(0,2)
+    #decides whether the computer's strategy is dumd or stupid: 0 is dumb and 1 is smart
+    comp_strategy = randrange(0,2)
+
+    print('The game begins! The pile size is %s marbles.' %(pile_size))
+    
+    if comp_strategy == 0:
+        print('You are lucky! The computer is dumb')            # printed when computer is dumb (0)
+    else:
+        print('The computer is smart. Good luck to you.')       # printed when strategy = 1
+
+    #create loop that breaks when the pile size is 2
+    while pile_size > 2:
+        #defining the computer's move
+        if start == 0:
+            print('It is my turn')
+            #defining the computer's move based in its strategy
+            #the computer will take a random amount only when it is dumb or if the pile size is a power of 2 - 1
+            if comp_strategy == 0 or pile_size in power_of_two:
+                computer_take = randrange(1, pile_size // 2 + 1)
+            #the computer will make the pile a number in the list of power of 2 - 1 a legal move if it is smart
+            else:
+                for power in power_of_two:
+                    #checks which power of 2 - 1 can be made in the legal move
+                    if (pile_size // 2 >= pile_size - power) and (pile_size - power > 0):
+                        #the computer makes its move 
+                        computer_take = pile_size - power
+                        break                               # break command will end the loop from running
+            pile_size -= computer_take
+            print('I take %d marbles from the pile. The pile now has %d marbles' %(computer_take,pile_size))
+            #chance to the human's turn
+            start = 1
         else:
-            #preventing the human from having a turn if the pile is size 2, because the game is decided
-            if pile == 2:
+            #prevents the human from having a turn if the pile size is 2 because the game is over
+            if pile_size == 2:
                 break
-            print("Your turn.   The pile currently has", pile, "marbles in it.")
-            hum_take = 0
-            take = int(input("How many marbles will you take? "))
-            #forcing the user to input a valid move
-            while hum_take < 1 or hum_take > pile // 2:
-                hum_take = int(input('Please input an integer between 1 and %d: ' %(pile // 2)))
-            pile -= hum_take
-            #update pile
-            print("Now the pile has", pile, "marbles in it.\n")
-            #changing the turn back to the computer
-            turn = 0
+            print('It is your turn')
+            human_take = 0
+            #forces the human to input a valid integer as their move
+            while human_take < 1 or human_take > pile_size // 2:
+                human_take = int(input('Please enter an integer between 1 and %d: ' %(pile_size // 2)))
+            pile_size -= human_take
+            print('You have taken %d marbles from the pile. The pile is has %d now' %(human_take, pile_size))
+            #changes back to the computer's turn 
+            start = 0
 
-    return turn == 0
-
-if nim():
-    print("You Won!")
-else:
-    print("The computer won!")
+    #uses the most recent turn to decide the winner of the game
+    #the winner is whoever takes one marble from a pile size of 2
+    if start == 0:
+        print('I take one marble from the pile and leave you with the last one. You have lost.')
+        return False
+    else: 
+        print('You take one marble from the pile and leave me with the last one. You win!!')
+        return True
 
 nim()
