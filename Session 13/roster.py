@@ -1,3 +1,4 @@
+import dbm
 import random
 
 ROSTER = {"Beshansky": 0,
@@ -29,6 +30,7 @@ def call(roster):
     TO-DO: update dict after every call
     TO-DO: save dict to files
     """
+    db= dbm.open('db_student', 'c')
     value_list = roster.values()                # makes list of values as the roster values (0 and 1)
     min_value = min(value_list)                 # minimum value of roster values (0)
     
@@ -37,5 +39,10 @@ def call(roster):
         if number == min_value:
             names.append(name)      # if number is associated with min value (0), the name is added to the list
     return random.choice(names)
+        elif random.choice(names):
+            db.write(new_line)
 
 print(call(ROSTER))
+
+new_line= line.replace(number, new)
+new = 1
