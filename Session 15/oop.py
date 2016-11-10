@@ -1,21 +1,21 @@
-class Point:
+class Point:                                #class: programmer defined type: factory for creating objects
     """Represents a point in 2-D space.
     attributes: x, y
     """
-
+my_point = Point()          # call point as a function
+my_point                    # return the reference to a point
 
 def print_point(p):
     """Print a Point object in human-readable format."""
-    print('(%g, %g)' % (p.x, p.y))
+    print('(%g, %g)' % (p.x, p.y))               # % inititates start of specifier (dot notation of x/y are attributes)
 
-
-def distance_between_points(p1, p2):
+def distance_between_points(p1, p2):       
     """Computes the distance between two Point objects.
     p1: Point
     p2: Point
     returns: float
     """
-    import math
+    import math             # p is built in alias for my point (if not sure used function hasattr(mypoint.x))
     return math.sqrt((p2.x - p1.x)**2 + (p2.y - p1.y)**2)
     pass
 
@@ -24,7 +24,7 @@ class Rectangle:
     """Represents a rectangle. 
     attributes: width, height, corner (bottom left corner of rectangle)
     """
-
+                        #dimensions given in def main below
 
 def find_center(rect):
     """Returns a Point at the center of a Rectangle.
@@ -43,7 +43,7 @@ def print_rectangle(rect):
     print('the lower-left corner is', rect.corner.x, rect.corner.y)
 
 
-def grow_rectangle(rect, dwidth, dheight):
+def grow_rectangle(rect, dwidth, dheight):                         #objects are mutable, modify object
     """Modifies the Rectangle by adding to its width and height.
     rect: Rectangle object.
     dwidth: change in width (can be negative).
